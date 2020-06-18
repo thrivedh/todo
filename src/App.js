@@ -1,45 +1,19 @@
 import React, { Component } from 'react';
 import "./todo.css";
+import Head from "./Head";
 
-export default class App extends Component{
-  constructor(props){
-    super(props);
 
-    this.state ={
-      userInput:'',
-      list:[]
-    }
-  }
-  changeUserInput(input){
-    this.setState({
-      userInput:input
-    });
-  }
-  addToList(input){
-    let listArray =this.state.list;
-
-    listArray.push(input);
-    this.setState({
-      list: listArray,
-      userInput:''
-    })
-  }
-
+class App extends Component{
   render(){
     return(
-      <div className="todoapp">
-        <input
-        onChange={(e)=> this.changeUserInput(e.target.value)} 
-        value={this.state.userInput} 
-        type="text"/>
-
-        <button onClick={()=>this.addToList(this.state.userInput)}> add </button>
+      <div>
         
-        <ul>
-        {this.state.list.map((val)=><li>{val}</li>)}
-        </ul>
-
+        <Head/>
+      
       </div>
+
     );
   }
 }
+  
+export default App;

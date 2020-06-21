@@ -6,7 +6,7 @@ class H extends Component{
       return(
         <div className="ex">
                  
-            {this.state.list.map((val)=><li>{val}</li>)}
+            {this.props.list.map((val)=><li>{val}</li>)}
 
         </div>
   
